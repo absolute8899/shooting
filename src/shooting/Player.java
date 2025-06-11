@@ -1,7 +1,9 @@
 package shooting;
 import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 
-public class Player extends Character{
+
+public class Player extends Character implements KeyListener{
 	public Player(double x,double y,double vx,double vy) {
 		super(x,y,vx,vy);
 	}
@@ -23,7 +25,15 @@ public class Player extends Character{
 		}
 	}
 	
+	public void keyTyped(KeyEvent e){
+	}
 	
+	public void move() {
+		super.move();
+		if(x<0) x=0;
+		if(x>370) x=370;
+	
+	}
 
 
 }

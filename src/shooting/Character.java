@@ -9,7 +9,7 @@ public class Character {
 		this.vy=vy;
 	}
 	public void move() {
-		x+=vy;
+		x+=vx;
 		y+=vy;
 	}
 	
