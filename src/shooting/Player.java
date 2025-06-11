@@ -4,6 +4,13 @@ import java.awt.event.KeyListener;
 
 
 public class Player extends Character implements KeyListener{
+	public void draw(MyFrame f) {
+		f.setColor(0, 0, 128);
+		f.fillRect(x, y+20, 30, 15);
+		f.setColor(0, 0,128);
+		f.fillRect(x+10, y+10, 10, 25);
+	}
+	
 	public Player(double x,double y,double vx,double vy) {
 		super(x,y,vx,vy);
 	}
@@ -15,7 +22,9 @@ public class Player extends Character implements KeyListener{
 			vx=+5;
 		}
 		if(e.getKeyCode()==KeyEvent.VK_SPACE) {
+			GameWorld.playerBullets.add(new PlayerBullet(x,y,2,-10));
 			GameWorld.playerBullets.add(new PlayerBullet(x,y,0,-10));
+			GameWorld.playerBullets.add(new PlayerBullet(x,y,-2,-10));
 			System.out.println("弾の数="+GameWorld.playerBullets.size());
 		}
 	}
