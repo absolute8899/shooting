@@ -47,6 +47,7 @@ public class GameFrame extends MyFrame {
 			}else {
 				i++;
 			}
+			
 		}
 		
 	}

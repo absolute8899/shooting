@@ -20,6 +20,10 @@ public class EnemyBase extends Enemy{
 		if(Math.random()<0.01) {
 			GameWorld.enemies.add(new DropEnemy(x,y,0,1));
 		}
+		if(Math.random()<0.01) {
+			double randomVx = (Math.random() - 0.5) * 10; // -5.0 ～ 5.0 の範囲
+		    GameWorld.enemies.add(new ReflectionEnemy(x, y, randomVx, 2));
+		}
 	}
 	
 	public void draw(MyFrame f) {
