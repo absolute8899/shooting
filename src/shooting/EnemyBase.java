@@ -3,6 +3,7 @@ package shooting;
 public class EnemyBase extends Enemy{
 	public EnemyBase(double x,double y,double vx,double vy) {
 		super(x,y,vx,vy);
+		life=100;
 	}
 	public void move() {
 		super.move();
@@ -21,8 +22,9 @@ public class EnemyBase extends Enemy{
 			GameWorld.enemies.add(new DropEnemy(x,y,0,1));
 		}
 		if(Math.random()<0.01) {
-			double randomVx = (Math.random() - 5) ; // -5.0 ～ 5.0 の範囲
-		    GameWorld.enemies.add(new ReflectionEnemy(x, y, randomVx, 2));
+			double randomVx = (Math.random() - 5) ; 
+			int randomVy = (int)(Math.random() * 4) + 1;
+		    GameWorld.enemies.add(new ReflectionEnemy(x, y, randomVx, randomVy));
 		}
 	}
 	
