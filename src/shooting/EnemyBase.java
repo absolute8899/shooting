@@ -21,7 +21,7 @@ public class EnemyBase extends Enemy{
 			GameWorld.enemies.add(new DropEnemy(x,y,0,1));
 		}
 		if(Math.random()<0.01) {
-			double randomVx = (Math.random() - 0.5) * 10; // -5.0 ～ 5.0 の範囲
+			double randomVx = (Math.random() - 5) ; // -5.0 ～ 5.0 の範囲
 		    GameWorld.enemies.add(new ReflectionEnemy(x, y, randomVx, 2));
 		}
 	}

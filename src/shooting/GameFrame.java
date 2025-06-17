@@ -21,6 +21,8 @@ public class GameFrame extends MyFrame {
 		}
 	}
 	
+	
+	
 	public void movePlayerBullets() {
 		int i=0;
 		while(i<GameWorld.playerBullets.size()) {
@@ -36,7 +38,8 @@ public class GameFrame extends MyFrame {
 	}
 	
 	public void moveEnemies() {
-		for(int i =0;i<GameWorld.enemies.size();i++) {
+		int i=0;
+		while(i<GameWorld.enemies.size()) {
 			Enemy e=GameWorld.enemies.get(i);
 			e.draw(this);
 			e.move();

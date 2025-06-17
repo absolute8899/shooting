@@ -12,9 +12,11 @@ public class ReflectionEnemy  extends Enemy{
 	}
 	
 	public void draw(MyFrame f) {
-		
+		f.setColor(128, 0, 128);
 		f.fillRect(x+10, y+15, 30, 7);
+		f.setColor(128, 0, 128);
 		f.fillOval(x+5, y+12, 15, 15);
+		f.setColor(128, 0, 128);
 		f.fillOval(x+30, y+12, 15, 15);
 	}
 
