@@ -3,7 +3,7 @@ package shooting;
 public class ReflectionEnemy  extends Enemy{
 	public ReflectionEnemy(double x,double y,double vx,double vy) {
 		super(x,y,vx,vy);
-		life=4;
+		life=4+GameWorld.stage;
 	}
 	public void move() {
 		super.move();
