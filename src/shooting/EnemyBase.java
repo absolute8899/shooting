@@ -22,8 +22,8 @@ public class EnemyBase extends Enemy{
 		if(Math.random()<0.01) {
 			GameWorld.enemies.add(new DropEnemy(x,y,0,GameWorld.stage));
 		}
-		if(Math.random()<0.01) {
-			double randomVx = (Math.random() - 5-GameWorld.stage) ; 
+		if(Math.random()<0.01) {//左右ランダムに発射
+			double randomVx = (Math.random() +- 5 +-GameWorld.stage) ; 
 			int randomVy = (int)(Math.random() * 4) + 1;
 		    GameWorld.enemies.add(new ReflectionEnemy(x, y, randomVx, randomVy));
 		}

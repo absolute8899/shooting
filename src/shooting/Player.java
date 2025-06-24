@@ -6,7 +6,7 @@ import java.awt.event.KeyListener;
 public class Player extends Character implements KeyListener{
 	
 	private long lastShotTime = 0; // 最後に弾を撃った時刻（ミリ秒）
-	private final int shotCooldown = 100; // クールダウン時間（ミリ秒単位、例：300ms = 0.3秒）
+	private final int shotCooldown = 80; // クールダウン時間（ミリ秒単位、例：300ms = 0.3秒）
 	
 	private boolean aPressed = false;
 	private boolean dPressed = false;
@@ -25,7 +25,7 @@ public class Player extends Character implements KeyListener{
 		super(x,y,vx,vy);
 	}
 	
-	int type=1;
+	int type=1;//拡散弾とビームの入れ替えのフラグ
 	
 	public void keyPressed(KeyEvent e) {
 		switch (e.getKeyCode()) {
@@ -73,10 +73,10 @@ public class Player extends Character implements KeyListener{
 		// 移動処理
 		vx = 0;
 		if (aPressed) {
-			vx = -5;
+			vx = -5-GameWorld.stage;
 		}
 		if (dPressed) {
-			vx = 5;
+			vx = 5+GameWorld.stage;
 		}
 		super.move();
 
@@ -88,6 +88,7 @@ public class Player extends Character implements KeyListener{
 		// 射撃処理
 		if (jPressed) {
 			long now = System.currentTimeMillis();
+			//拡散弾とビームの判別のif
 			if (type == 3 && now - lastShotTime >= shotCooldown) {
 				GameWorld.playerBullets.add(new PlayerBullet(x, y, 2, -10));
 				GameWorld.playerBullets.add(new PlayerBullet(x, y, 0, -10));
